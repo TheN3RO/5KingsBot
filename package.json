@@ -1,0 +1,30 @@
+{
+  "name": "5kingsbot",
+  "version": "1.0.0",
+  "description": "Bot for 5kings team server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robipl12/5KingsBot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "team",
+    "csgo",
+    "private-project"
+  ],
+  "author": "TheN3RO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robipl12/5KingsBot/issues"
+  },
+  "homepage": "https://github.com/robipl12/5KingsBot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
