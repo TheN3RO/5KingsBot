@@ -1,14 +1,23 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
-
+const chalk = require('chalk');
+const Discord = require('discord.js')
+const { Client } = require('discord.js')
+const client = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION']})
+const { TOKEN } = require('./config/config.js')
+//wczytywanie modułów
+const color = require("chalk")
+//wczytywanie hendlerów
+const reactionHandler = require("./handlers/reactionHandler")
+const presenceHandler = require("./handlers/presenceHandler")
+const autoroleHandler = require("./handlers/autoroleHandler")
+const commandHandler = require("./handlers/commandHandler")
+//wywoływanie funkcji
+presenceHandler(client)
+autoroleHandler(client)
+commandHandler(client)
+reactionHandler(client)
+//strting bot
 client.on('ready', () => {
-  console.log(`Zalowgowano jako ${client.user.tag}!`);
+  console.log(color.blue.bold(`Zalowgowano jako ${client.user.tag}!`));
 });
-
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
-  }
-});
-
-client.login('Nzg3OTk2NDkzODk0MTIzNTUy.X9dE7A.oItLwTL7oPNbYUmVBx63CbvLHc4');
+//bot token
+client.login(TOKEN);
