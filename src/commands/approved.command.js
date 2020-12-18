@@ -19,6 +19,7 @@ module.exports = {
         let nick = args[1]
         if (!nick) {
             msg.channel.send(niepoprawne1)
+            return
         }
         if (title.toUpperCase() === "PRZYJĘTE") {
             console.log("przyjęte")
@@ -52,6 +53,7 @@ module.exports = {
                 channelodrzucone.send(odrzucone)
         } else {
             msg.channel.send(niepoprawne2)
+            return
         } 
     }
 }
