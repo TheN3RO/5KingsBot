@@ -5,6 +5,7 @@ module.exports = {
     discription: "Creating a new poll",
 
     run(msg) {
+        if (!member.permissionsIn(channel).has(["ADMINISTRATOR"])){return msg.reply("Nie masz permisji do tej koemndy!!")}
         const { guild, channel } = msg
         //embed
         const embed = new Discord.MessageEmbed()
